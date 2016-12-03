@@ -16,5 +16,7 @@ server.py (now defunct) saves this dictionary as a pickle file.
 
 Also tested with 4x4 tic tac toe. After an initial search (15 min), it plays very fast.
 
+ttt.py implements a very simply point-and-click GUI.
+
 Written by Patrick White, Dec 2016
 
