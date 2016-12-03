@@ -20,7 +20,9 @@ from core import *
 
 ROUNDS = 100
 screen = pygame.display.set_mode((300, 300))
-
+speed = 100
+flashes = 3
+quit = False
 
 # see core.py for constants: MAX, MIN, TIE
 
@@ -34,10 +36,10 @@ def place(char, move):
     for count in range(3):
         pygame.draw.rect(screen, white, (x,y, 90, 90))
         pygame.display.flip()
-        time.sleep(0.1)
+        time.sleep(1/speed)
         pygame.draw.rect(screen, color, (x,y, 90, 90))
         pygame.display.flip()
-        time.sleep(0.1)
+        time.sleep(1/speed)
 
 
 def pos_to_index(mousepos):
@@ -73,6 +75,7 @@ def play(strategy_X, strategy_O, first=MAX, silent=True):
     implemented elsewhere (e.g. in core.py). The current implementation
     uses a 9-char string as the state, but that is not exposed at this level.
     """
+    global quit
     board = start_state
     player = first
     current_strategy = {MAX: strategy_X, MIN: strategy_O}
@@ -83,10 +86,14 @@ def play(strategy_X, strategy_O, first=MAX, silent=True):
         pygame.display.flip()
         player = next_player(board, player)
         if not silent: print_board(board)
+        for e in pygame.event.get():
+            if e.type==pygame.QUIT:
+                player = None
+                quit = True
+    if quit: pygame.quit()
     return terminal_test(board)
 
-def main():
-    pygame.init()
+def start_game_gui():
     screen.fill([255, 255, 255])
 
     # draw lines
@@ -96,10 +103,19 @@ def main():
     pygame.draw.line(screen, (0, 0, 0), (300, 200), (0, 200))
 
     pygame.display.flip()
-    pygame.time.delay(500)
-    X_STRATEGY = human_gui
+
+def main():
+    pygame.init()
+
+    pygame.time.delay(1)
+    X_STRATEGY = ai.random_strategy
     O_STRATEGY = ai.minimax_strategy(9)
 
-    end = play(X_STRATEGY, O_STRATEGY, MAX)
-    print("Winner:", end)
+    for i in range(ROUNDS):
+        start_game_gui()
+        end = play(X_STRATEGY, O_STRATEGY, MAX)
+        print("Winner:", end)
+        if quit: exit()
+
+    pygame.quit()
 main()
