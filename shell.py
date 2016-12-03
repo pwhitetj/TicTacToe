@@ -3,6 +3,11 @@ import random
 import pickle
 from strategy import *
 
+####################################
+# original version of shell / client
+# does NOT currently work with current strategy/core
+# use mini-shell instead
+#####################################
 
 
 def play(strategy_X, strategy_O, first = MAX, verbosity = 1):
