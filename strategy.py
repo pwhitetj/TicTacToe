@@ -20,6 +20,7 @@ from core import *
 ######################################################################
 
 # dictionaries for remembering boards
+
 memory_min = {}
 memory_max = {}
 
@@ -46,7 +47,8 @@ def minimax_strategy(max_depth=9):
 def minimax(board, player, max_depth):
     """ Takes a current board and player and max_depth and returns a best move.
 
-    This is the top level mini-max function. """
+     This is the top level mini-max function. Note depth is ignored. We
+     always search to the end of the game."""
 
     if player == MAX: move= max_dfs(board, player, max_depth)[1]
     if player == MIN: move= min_dfs(board, player, max_depth)[1]
@@ -58,7 +60,9 @@ def min_dfs(board, player, max_depth, current_depth = 0):
 
     Returns the value of the current node (min of the children), and the
     move corresponding to that min point. In case of a tie, the "rightmost"
-    child is selected. """
+    child is selected. Note depth is ignored. We always search to the end
+    of the game. """
+
     res = terminal_test(board)
     if res in endings: return evaluate[res], None
     value, move = 10**8, -1
@@ -79,7 +83,9 @@ def max_dfs(board, player, max_depth, current_depth = 0):
 
        Returns the value of the current node (max of the children), and the
        move corresponding to that max point. In case of a tie, the "rightmost"
-       child is selected. """
+       child is selected. Note depth is ignored. We always search to the end
+       of the game."""
+
     res = terminal_test(board)
     if res in endings: return evaluate[res], None
     value, move = -10**8, -1
