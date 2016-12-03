@@ -14,8 +14,6 @@ from core import *
 X_STRATEGY = ai.minimax_strategy(3)
 O_STRATEGY = ai.random_strategy
 ROUNDS = 100
-start_state = "........."
-
 
 # see core.py for constants: MAX, MIN, TIE
 
