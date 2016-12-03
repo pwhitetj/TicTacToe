@@ -1,3 +1,4 @@
+import pickle
 import strategy as ai
 from core import *
 
@@ -13,7 +14,7 @@ from core import *
 
 X_STRATEGY = ai.minimax_strategy(3)
 O_STRATEGY = ai.random_strategy
-ROUNDS = 100
+ROUNDS = 1000
 
 # see core.py for constants: MAX, MIN, TIE
 
@@ -57,3 +58,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+out = open("TicTacToe-Boards-" + str(N) + ".pk", "wb")
+pickle.dump((ai.memory_min, ai.memory_max), out)
+
