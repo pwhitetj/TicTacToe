@@ -1,6 +1,8 @@
-import pygame, sys, random, time
+import  sys, random, time
 import strategy as ai
 from core import *
+import os
+import pygame
 
 #############################################################
 # ttt.py
@@ -19,10 +21,10 @@ from core import *
 ############################################################
 
 ROUNDS = 100
-screen = pygame.display.set_mode((300, 300))
 speed = 100
 flashes = 3
 quit = False
+screen = None
 
 # see core.py for constants: MAX, MIN, TIE
 
@@ -104,11 +106,14 @@ def start_game_gui():
 
     pygame.display.flip()
 
-def main():
+def main(x,y):
+    global screen
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x, y)
     pygame.init()
+    screen = pygame.display.set_mode((300, 300))
 
     pygame.time.delay(1)
-    X_STRATEGY = human_gui
+    X_STRATEGY = ai.minimax_strategy(5)
     O_STRATEGY = ai.random_strategy
 
     for i in range(ROUNDS):
@@ -118,4 +123,8 @@ def main():
         if quit: exit()
 
     pygame.quit()
-main()
+
+#from multiprocessing import Pool
+#p = Pool(4)
+#p.map(main, range(4))
+main(100,90)

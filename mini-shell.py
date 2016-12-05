@@ -36,7 +36,7 @@ def play(strategy_X, strategy_O, first=MAX, silent=True):
         board = make_move(board, player, move)
         player = next_player(board, player)
         if not silent: print_board(board)
-    return terminal_test(board)
+    return terminal_test(board) # returns "X" "O" or "TIE"
 
 
 def main():
