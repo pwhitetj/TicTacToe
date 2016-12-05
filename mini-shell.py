@@ -13,8 +13,9 @@ from core import *
 ############################################################
 
 X_STRATEGY = ai.minimax_strategy(3)
-O_STRATEGY = ai.random_strategy
+O_STRATEGY = ai.human
 ROUNDS = 1000
+SILENT = False
 
 # see core.py for constants: MAX, MIN, TIE
 
@@ -46,11 +47,15 @@ def main():
     """
     j = []
     for i in range(ROUNDS):
-        game_result = play(X_STRATEGY, O_STRATEGY,
-                      first=random.choice([MAX, MIN]),
-                      silent=True)
-        j.append(game_result)
-        print("Winner: ", game_result)
+        try:
+            game_result = play(X_STRATEGY, O_STRATEGY,
+                          first=random.choice([MAX, MIN]),
+                          silent=SILENT)
+            j.append(game_result)
+            print("Winner: ", game_result)
+        except IllegalMoveError as e:
+            print(e)
+            j.append("FORFEIT")
     print("\nResults\n" + "%4s %4s %4s" % ("X", "O", "-"))
     print("-" * 15)
     print("%4i %4i %4i" % (j.count(MAX), j.count(MIN), j.count(TIE)))
@@ -58,7 +63,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-out = open("TicTacToe-Boards-" + str(N) + ".pk", "wb")
-pickle.dump((ai.memory_min, ai.memory_max), out)
-

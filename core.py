@@ -80,7 +80,8 @@ def result(board, player, var):
 
 def make_move(board, player, move):
     """ assigns var to player on board and returns new board """
-    assert board[move] == ".", "%s is not empty" % str(move)
+    if board[move] != ".":
+        raise IllegalMoveError(board, player, move)
     new_board = board[:move] + player + board[move + 1:]
     return new_board
 
@@ -125,3 +126,13 @@ def dfs(board, player, depth):
     for a in actions(board):
         dfs(*result(board, player, a), depth + 1)
         count+=1
+
+
+class IllegalMoveError(Exception):
+    def __init__(self, board, player, move ):
+        self.player = player
+        self.move = move
+        self.board = board
+
+    def __str__(self):
+        return 'Forfeit! %s cannot move to square %d' % (self.player, self.move)
