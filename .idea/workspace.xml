@@ -7,8 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d9df4327-a9f6-46f1-9cae-4d901b14091f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mini-shell.py" afterPath="$PROJECT_DIR$/mini-shell.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ttt.py" afterPath="$PROJECT_DIR$/ttt.py" />
     </list>
     <ignored path="TicTacToe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -690,7 +688,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480910725914</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="mini-shell tweaks. posted to blackboard">
+      <created>1480981594947</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1480981594948</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -766,7 +771,8 @@
     <MESSAGE value="small edits&#10;" />
     <MESSAGE value="Round Robin Tournament added (tournament.py)&#10;student ai samples&#10;core.py bug fix" />
     <MESSAGE value="Added Illegal Move exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Illegal Move exception" />
+    <MESSAGE value="mini-shell tweaks. posted to blackboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="mini-shell tweaks. posted to blackboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
