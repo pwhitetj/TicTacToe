@@ -108,8 +108,8 @@ def main():
     pygame.init()
 
     pygame.time.delay(1)
-    X_STRATEGY = ai.random_strategy
-    O_STRATEGY = ai.minimax_strategy(9)
+    X_STRATEGY = human_gui
+    O_STRATEGY = ai.random_strategy
 
     for i in range(ROUNDS):
         start_game_gui()

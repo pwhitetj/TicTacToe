@@ -33,7 +33,7 @@ TIE = "TIE"
 endings = (MAX, MIN, TIE)
 rows = [[N*i+j for j in range(N)] for i in range(N)]
 cols = [[N*j+i for j in range(N)] for i in range(N)]
-diags = [list(range(0,N*N,N+1)), list(range(N-1,N*N,N-2))]
+diags = [list(range(0,N*N,N+1)), list(range(N-1,N*N-2,N-1))]
 units = rows + cols + diags
 evaluate = {MAX:1, MIN:-1, ".":0, TIE:0}
 
