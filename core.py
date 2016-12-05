@@ -123,9 +123,9 @@ def dfs(board, player, depth):
         all_boards.append(board)
         return None
 
-    for a in actions(board):
-        dfs(*result(board, player, a), depth + 1)
-        count+=1
+#    for a in actions(board):
+#        dfs(*result(board, player, a), depth + 1)
+#        count+=1
 
 
 class IllegalMoveError(Exception):

@@ -13,7 +13,7 @@ from core import *
 ############################################################
 
 X_STRATEGY = ai.minimax_strategy(3)
-O_STRATEGY = ai.human
+O_STRATEGY = ai.minimax_strategy(3)
 ROUNDS = 1000
 SILENT = False
 
