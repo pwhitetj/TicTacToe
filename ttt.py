@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import sys, random, time
+=======
+import  sys, random, time
+>>>>>>> master
 import strategy as ai
 import pygame
 from core import *
 import os
+<<<<<<< HEAD
+=======
+import pygame
+>>>>>>> master
 
 #############################################################
 # ttt.py
@@ -21,13 +29,17 @@ import os
 ############################################################
 
 ROUNDS = 100
+<<<<<<< HEAD
 if len(sys.argv)>2:
     (xpos, ypos) = sys.argv[1:3]
 os.environ['SDL_VIDEO_WINDOW_POS'] = xpos+","+ypos
 screen = pygame.display.set_mode((300, 300))
+=======
+>>>>>>> master
 speed = 100
 flashes = 0
 quit = False
+screen = None
 
 # see core.py for constants: MAX, MIN, TIE
 
@@ -121,11 +133,18 @@ def start_game_gui():
 
     pygame.display.flip()
 
-def main():
+def main(x,y):
+    global screen
+    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x, y)
     pygame.init()
+    screen = pygame.display.set_mode((300, 300))
 
     pygame.time.delay(1)
+<<<<<<< HEAD
     X_STRATEGY = ai.random_strategy
+=======
+    X_STRATEGY = ai.minimax_strategy(5)
+>>>>>>> master
     O_STRATEGY = ai.random_strategy
 
     for i in range(ROUNDS):
@@ -135,4 +154,12 @@ def main():
         if quit: exit()
 
     pygame.quit()
+<<<<<<< HEAD
 main()
+=======
+
+#from multiprocessing import Pool
+#p = Pool(4)
+#p.map(main, range(4))
+main(100,90)
+>>>>>>> master

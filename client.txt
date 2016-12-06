@@ -3,7 +3,7 @@ import strategy as ai
 from core import *
 
 #############################################################
-# mini-shell.py
+# client.py
 # a simple tic-tac-toe client
 # plays 2 strategies against each other and keeps score
 # imports strategies from "strategies.py" as ai
@@ -13,7 +13,7 @@ from core import *
 ############################################################
 
 X_STRATEGY = ai.minimax_strategy(3)
-O_STRATEGY = ai.minimax_strategy(3)
+O_STRATEGY = ai.human
 ROUNDS = 1000
 SILENT = False
 
