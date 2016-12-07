@@ -1,8 +1,9 @@
-import  sys, random, time
+
+import sys, random, time
 import strategy as ai
+import pygame
 from core import *
 import os
-import pygame
 
 #############################################################
 # ttt.py
@@ -21,8 +22,13 @@ import pygame
 ############################################################
 
 ROUNDS = 100
+if len(sys.argv)>2:
+    (xpos, ypos) = sys.argv[1:3]
+os.environ['SDL_VIDEO_WINDOW_POS'] = xpos+","+ypos
+screen = pygame.display.set_mode((300, 300))
+
 speed = 100
-flashes = 3
+flashes = 0
 quit = False
 screen = None
 
@@ -43,6 +49,17 @@ def place(char, move):
         pygame.display.flip()
         time.sleep(1/speed)
 
+def show_end_screen(terminal):
+    color = (255,255,255)
+    if terminal == "X":
+        color = (100,200,40)
+    if terminal == "O":
+        color = (100,40,200)
+    if terminal == "TIE":
+        color = (200,240,240)
+    pygame.draw.rect(screen, color,(0,0,300,300))
+    pygame.display.flip()
+    time.sleep(0.3)
 
 def pos_to_index(mousepos):
     col = mousepos[0] // 100
@@ -93,6 +110,7 @@ def play(strategy_X, strategy_O, first=MAX, silent=True):
                 player = None
                 quit = True
     if quit: pygame.quit()
+    show_end_screen(terminal_test(board))
     return terminal_test(board)
 
 def start_game_gui():
@@ -106,14 +124,13 @@ def start_game_gui():
 
     pygame.display.flip()
 
-def main(x,y):
+def main():
     global screen
-    os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x, y)
     pygame.init()
     screen = pygame.display.set_mode((300, 300))
 
     pygame.time.delay(1)
-    X_STRATEGY = ai.minimax_strategy(5)
+    X_STRATEGY = ai.random_strategy
     O_STRATEGY = ai.random_strategy
 
     for i in range(ROUNDS):
@@ -124,7 +141,4 @@ def main(x,y):
 
     pygame.quit()
 
-#from multiprocessing import Pool
-#p = Pool(4)
-#p.map(main, range(4))
-main(100,90)
+main()

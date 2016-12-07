@@ -12,8 +12,8 @@ from core import *
 # Patrick White: December 2016
 ############################################################
 
-X_STRATEGY = ai.minimax_strategy(3)
-O_STRATEGY = ai.human
+X_STRATEGY = ai.minimax_strategy(9)
+O_STRATEGY = ai.minimax_strategy(3)
 ROUNDS = 1000
 SILENT = False
 
