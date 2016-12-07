@@ -1,4 +1,3 @@
-
 import sys, random, time
 import strategy as ai
 import pygame
@@ -21,16 +20,25 @@ import os
 # Patrick White: December 2016
 ############################################################
 
-ROUNDS = 100
+ROUNDS = 15
 if len(sys.argv)>2:
     (xpos, ypos) = sys.argv[1:3]
 os.environ['SDL_VIDEO_WINDOW_POS'] = xpos+","+ypos
-screen = pygame.display.set_mode((300, 300))
 
+if sys.argv[3]=="random":
+    X_STRATEGY = ai.random_strategy
+else:
+    X_STRATEGY = ai.minimax_strategy(10)
+
+if sys.argv[4]=="random":
+    O_STRATEGY = ai.random_strategy
+else:
+    O_STRATEGY = ai.minimax_strategy(10)
+
+screen = pygame.display.set_mode((300, 300))
 speed = 100
 flashes = 0
 quit = False
-screen = None
 
 # see core.py for constants: MAX, MIN, TIE
 
@@ -125,13 +133,9 @@ def start_game_gui():
     pygame.display.flip()
 
 def main():
-    global screen
     pygame.init()
-    screen = pygame.display.set_mode((300, 300))
 
     pygame.time.delay(1)
-    X_STRATEGY = ai.random_strategy
-    O_STRATEGY = ai.random_strategy
 
     for i in range(ROUNDS):
         start_game_gui()
@@ -140,5 +144,4 @@ def main():
         if quit: exit()
 
     pygame.quit()
-
 main()
