@@ -4,11 +4,14 @@
 
 import socket
 import strategy as ai
-
+import sys
 
 def Main():
     host = "127.0.0.1"
     port = 5001
+
+    if (sys.argv[1]!=""):
+        port = int(sys.argv[1])
 
     mySocket = socket.socket()
     mySocket.bind((host, port))
