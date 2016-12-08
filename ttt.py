@@ -3,6 +3,7 @@ import strategy as ai
 import pygame
 from core import *
 import os
+import socket
 
 #############################################################
 # ttt.py
@@ -20,20 +21,58 @@ import os
 # Patrick White: December 2016
 ############################################################
 
+host = '192.168.1.5'
+port = 5001
+silent = False
+
+
+def human(board, player):
+    """ Asks a human for input and returns the move. No error checking. """
+    move = int(input("Your move, (1-9)"+str(player) + ":"))-1
+    return move
+
+def human_gui(board, player):
+    while True:
+        event = pygame.event.wait()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            mousepos = pygame.mouse.get_pos()
+            move = pos_to_index(mousepos)
+            return move
+        elif event.type == pygame.QUIT:
+            return None
+
+def ai_server(board, player):
+    message = "%s %s" % (board, player)
+    mySocket.send(message.encode())
+    data = mySocket.recv(1024).decode()
+    move = int(data)
+    print("-----------sent %s rcvd %s" % (message, data))
+    return move
+
 ROUNDS = 15
 if len(sys.argv)>2:
     (xpos, ypos) = sys.argv[1:3]
+
 os.environ['SDL_VIDEO_WINDOW_POS'] = xpos+","+ypos
 
-if sys.argv[3]=="random":
-    X_STRATEGY = ai.random_strategy
-else:
-    X_STRATEGY = ai.minimax_strategy(10)
+strategies = {"random": ai.random_strategy,
+              "minimax": ai.minimax_strategy(10),
+              "human": human,
+              "human_gui": human_gui,
+              "server": ai_server}
 
-if sys.argv[4]=="random":
-    O_STRATEGY = ai.random_strategy
-else:
-    O_STRATEGY = ai.minimax_strategy(10)
+if sys.argv[3]!="":
+    X_STRATEGY = strategies[sys.argv[3]]
+
+if sys.argv[4]!="":
+    O_STRATEGY = strategies[sys.argv[4]]
+
+if sys.argv[5] != "":
+    port = int(sys.argv[5])
+
+if X_STRATEGY==ai_server or O_STRATEGY == ai_server:
+    mySocket = socket.socket()
+    mySocket.connect((host, port))
 
 screen = pygame.display.set_mode((300, 300))
 speed = 100
@@ -82,16 +121,6 @@ def index_to_pos(i):
     pos = (100 * col + 5, 100 * row + 5)
     return pos
 
-
-def human_gui(board, player):
-    while True:
-        event = pygame.event.wait()
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            mousepos = pygame.mouse.get_pos()
-            move = pos_to_index(mousepos)
-            return move
-        elif event.type == pygame.QUIT:
-            return None
 
 def play(strategy_X, strategy_O, first=MAX, silent=True):
     """
