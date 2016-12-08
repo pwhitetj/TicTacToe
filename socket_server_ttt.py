@@ -7,7 +7,7 @@ import strategy as ai
 import sys
 
 def Main():
-    host = "127.0.0.1"
+    host = "198.38.18.67" #mario
     port = 5001
 
     if (sys.argv[1]!=""):

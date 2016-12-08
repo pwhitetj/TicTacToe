@@ -21,7 +21,7 @@ import socket
 # Patrick White: December 2016
 ############################################################
 
-host = '192.168.1.5'
+host = '198.38.18.67'
 port = 5001
 silent = False
 
