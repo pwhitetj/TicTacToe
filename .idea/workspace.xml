@@ -6,10 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9df4327-a9f6-46f1-9cae-4d901b14091f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/socket_client.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/socket_client_ttt.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/socket_server.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/socket_server_ttt.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TicTacToe.iws" />
@@ -32,7 +28,7 @@
     <SUITE FILE_PATH="coverage/TicTacToe$shell.coverage" NAME="shell Coverage Results" MODIFIED="1480779437553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TicTacToe$TicTacToe_slim.coverage" NAME="TicTacToe-slim Coverage Results" MODIFIED="1480738501182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TicTacToe$TicTacToe_N.coverage" NAME="TicTacToe-N Coverage Results" MODIFIED="1480741762233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TicTacToe$ttt.coverage" NAME="ttt Coverage Results" MODIFIED="1481055776702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TicTacToe$ttt.coverage" NAME="ttt Coverage Results" MODIFIED="1481150465190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -46,11 +42,21 @@
       <file leaf-file-name="ttt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ttt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="-554">
+              <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gen_shell_script.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gen_shell_script.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,7 +81,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="socket_server_ttt.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="socket_server_ttt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/socket_server_ttt.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
@@ -90,11 +96,9 @@
       <file leaf-file-name="socket_client_ttt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/socket_client_ttt.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-              <folding>
-                <element signature="e#109#122#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="45">
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,18 +119,6 @@
             <state relative-caret-position="290">
               <caret line="32" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mini-shell.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mini-shell.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="39" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -172,12 +164,13 @@
         <option value="$PROJECT_DIR$/tournament.py" />
         <option value="$PROJECT_DIR$/core.py" />
         <option value="$PROJECT_DIR$/strategies/student_ai_105.py" />
-        <option value="$PROJECT_DIR$/ttt.py" />
         <option value="$PROJECT_DIR$/socket_server.py" />
         <option value="$PROJECT_DIR$/mini-shell.py" />
         <option value="$PROJECT_DIR$/socket_client.py" />
         <option value="$PROJECT_DIR$/socket_server_ttt.py" />
         <option value="$PROJECT_DIR$/socket_client_ttt.py" />
+        <option value="$PROJECT_DIR$/ttt.py" />
+        <option value="$PROJECT_DIR$/gen_shell_script.py" />
       </list>
     </option>
   </component>
@@ -398,7 +391,7 @@
       </FILE-GROUP>
     </UpdatedFiles>
   </component>
-  <component name="RunManager" selected="Python.tournament">
+  <component name="RunManager" selected="Python.ttt">
     <configuration default="false" name="TicTacToe-N" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -467,7 +460,7 @@
       <module name="TicTacToe" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ttt.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="100 100 random minimax" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
@@ -706,8 +699,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.tournament" />
-        <item index="1" class="java.lang.String" itemvalue="Python.ttt" />
+        <item index="0" class="java.lang.String" itemvalue="Python.ttt" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tournament" />
         <item index="2" class="java.lang.String" itemvalue="Python.mini-shell" />
         <item index="3" class="java.lang.String" itemvalue="Python.shell" />
         <item index="4" class="java.lang.String" itemvalue="Python.TicTacToe-N" />
@@ -812,7 +805,21 @@
       <option name="project" value="LOCAL" />
       <updated>1481055869595</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added TCP Socket testbed. Text based socket AI interface works.">
+      <created>1481149403185</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1481149403185</updated>
+    </task>
+    <task id="LOCAL-00014" summary="TCP sockets work in GUI now">
+      <created>1481159807246</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1481159807246</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -834,7 +841,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44367176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30346385" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20707831" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -889,14 +896,16 @@
     <MESSAGE value="Round Robin Tournament added (tournament.py)&#10;student ai samples&#10;core.py bug fix" />
     <MESSAGE value="Added Illegal Move exception" />
     <MESSAGE value="mini-shell tweaks. posted to blackboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="mini-shell tweaks. posted to blackboard" />
+    <MESSAGE value="Added TCP Socket testbed. Text based socket AI interface works." />
+    <MESSAGE value="TCP sockets work in GUI now" />
+    <option name="LAST_COMMIT_MESSAGE" value="TCP sockets work in GUI now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ttt.py</url>
-          <line>145</line>
+          <line>174</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
@@ -917,7 +926,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/othello.bmp" />
     <entry file="file://$PROJECT_DIR$/TicTacToe-slim.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -1137,7 +1145,7 @@
         <state relative-caret-position="1140">
           <caret line="76" column="26" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1147,17 +1155,7 @@
         <state relative-caret-position="117">
           <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ttt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1215,17 +1213,7 @@
         <state relative-caret-position="405">
           <caret line="39" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socket_client_ttt.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <element signature="e#109#122#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1237,6 +1225,32 @@
           <folding>
             <element signature="e#110#123#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socket_client_ttt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ttt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gen_shell_script.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
