@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys, random, time
 import strategy as ai
 import pygame
@@ -21,7 +23,8 @@ import socket
 # Patrick White: December 2016
 ############################################################
 
-host = '198.38.18.67'
+#host = '198.38.18.67'
+host = 'localhost'
 port = 5001
 silent = False
 
@@ -49,7 +52,7 @@ def ai_server(board, player):
     print("-----------sent %s rcvd %s" % (message, data))
     return move
 
-ROUNDS = 15
+ROUNDS = 100
 if len(sys.argv)>2:
     (xpos, ypos) = sys.argv[1:3]
 
@@ -70,6 +73,9 @@ if sys.argv[4]!="":
 if sys.argv[5] != "":
     port = int(sys.argv[5])
 
+if sys.argv[6] != "":
+    host = sys.argv[6]
+    
 if X_STRATEGY==ai_server or O_STRATEGY == ai_server:
     mySocket = socket.socket()
     mySocket.connect((host, port))

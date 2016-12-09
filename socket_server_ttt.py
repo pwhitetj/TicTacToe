@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 ### code taken from
 ### https://shakeelosmani.wordpress.com/2015/04/13/python-3-socket-programming-example/
 
@@ -7,7 +8,7 @@ import strategy as ai
 import sys
 
 def Main():
-    host = "198.38.18.67" #mario
+    host = socket.gethostname()
     port = 5001
 
     if (sys.argv[1]!=""):

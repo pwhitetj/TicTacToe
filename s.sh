@@ -4,3 +4,9 @@ python3 socket_server_ttt.py 50012 &
 python3 socket_server_ttt.py 50013 &
 python3 socket_server_ttt.py 50014 &
 python3 socket_server_ttt.py 50015 &
+python3 socket_server_ttt.py 50016 &
+python3 socket_server_ttt.py 50017 &
+python3 socket_server_ttt.py 50018 &
+python3 socket_server_ttt.py 50019 &
+python3 socket_server_ttt.py 50020 &
+python3 socket_server_ttt.py 50021 &

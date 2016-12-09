@@ -11,7 +11,7 @@ ywidth = 350
 port = 5010
 for xc in range(4):
     for yc in range(3):
-        print("python3 ttt.py %i %i random server %i &" % (xstart+xc*xwidth, ystart+yc*ywidth, port))
+        print("python3 ttt.py %i %i random server %i borg &" % (xstart+xc*xwidth, ystart+yc*ywidth, port))
         print("sleep 0.3")
         port += 1
 
