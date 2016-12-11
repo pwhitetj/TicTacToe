@@ -5,7 +5,7 @@ import random
 #
 # Implements core functionality for a tic-tac-toe AI game
 #
-# Imported by: strategy.py
+# Imported by: strategy5_ermoar.py
 # Imported by: mini-shell.py
 #
 # Imports: random.py
@@ -49,7 +49,7 @@ def print_board(board):
     print()
 
 
-def terminal_test(board):
+def terminal_test(board): #isTerminal()
     """ test is the game board is over, return False if not, else the winner/tie """
     win = winner(board)
     if win is not None: return win
@@ -94,7 +94,7 @@ def next_player(board, player):
         return toggle(player)
 
 
-def actions(board):
+def actions(board): #open_squares()
     """ returns a list of open squares in board (i.e. string indices) """
     open_squares = [i for (i,c) in enumerate(board) if c == "."]
     random.shuffle(open_squares)
@@ -106,16 +106,15 @@ def actions(board):
     return open_squares
 
 
-def toggle(player):
+def toggle(player):#toggle()
     """ returns the opposite of player """
     if player==MAX:
         return MIN
     else:
         return MAX
 
-
-def dfs(board, player, depth):
-    """ simple dfs to generate all game states """
+""" simple dfs to generate all game states """
+"""def dfs(board, player, depth):
     global count, terminal_count, all_boards
 
     if depth>4 and terminal_test(board):
@@ -123,9 +122,9 @@ def dfs(board, player, depth):
         all_boards.append(board)
         return None
 
-#    for a in actions(board):
-#        dfs(*result(board, player, a), depth + 1)
-#        count+=1
+    for a in actions(board):
+        dfs(*result(board, player, a), depth + 1)
+        count+=1"""
 
 
 class IllegalMoveError(Exception):

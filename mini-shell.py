@@ -1,5 +1,6 @@
 import pickle
-import strategy as ai
+import students.strategy2_nbuchana as ai
+import strategy as myAI
 from core import *
 
 #############################################################
@@ -12,9 +13,10 @@ from core import *
 # Patrick White: December 2016
 ############################################################
 
-X_STRATEGY = ai.minimax_strategy(3)
-O_STRATEGY = ai.minimax_strategy(3)
-ROUNDS = 1000
+X_STRATEGY = ai.minimax_strategy(9)
+O_STRATEGY = myAI.random_strategy
+
+ROUNDS = 20
 SILENT = False
 
 # see core.py for constants: MAX, MIN, TIE

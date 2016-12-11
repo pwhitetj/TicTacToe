@@ -1,0 +1,91 @@
+2	strategy2_2019agorle	OK
+2	strategy2_awang	ERROR	<class 'FileNotFoundError'>	[Errno 2] No such file or directory: 'graph_awang.txt'
+2	strategy2_asanders	OK
+2	strategy2_chatcher	OK
+2	strategies2_dlee	OK
+2	strategy2_2017dchao	ERROR	<class 'IndexError'>	string index out of range
+2	strategy2_dzhang	OK
+2	strategy2_ezou	OK
+2	strategy2_hmani (1)	OK
+2	strategy2_ighodgaonkar	OK
+2	strategy2_2018jkim	OK
+2	strategy2_kgaba	ERROR	<class 'TabError'>	inconsistent use of tabs and spaces in indentation (strategy2_kgaba.py, line 39)
+2	strategy2_kbudharaju	OK
+2	strategy2_vsemicheva	OK
+2	strategy2_mkrause	OK
+2	strategy2_nzhang	OK
+2	strategy2_nrao	OK
+2	strategy2_nsperry	OK
+2	strategy2_nbuchana	ERROR	<class 'ImportError'>	No module named '_tkinter'
+2	strategy2_phwang	OK
+2	strategy2_ryaradi	OK
+2	strategy2_rdas	OK
+2	strategy2_2018stermart	OK
+4	strategy4_aardeishar	OK
+4	strategy4_apathi	OK
+4	strategy4_aganotra	OK
+4	strategy4_cjin	OK
+4	strategy4_igallagh	OK
+4	strategy4_jblindenbach	OK
+4	strategy4_jlee2	ERROR	<class 'ImportError'>	No module named 'students.strategy4_jlee2' (check filename)
+4	strategy4_ksoldozy	OK
+4	strategy4_kaddanki	OK
+4	strategy4_2018kzou	OK
+4	strategy4_nohomnyom	OK
+4	strategy4_pavasara2	OK
+4	strategy4_ryeliset	OK
+4	strategy4_rjkim	OK
+4	strategy4_spkrishnamurthy	OK
+4	strategy4_tchittaj	OK
+4	strategy4_vmantha	OK
+4	strategy4_wbriffa	OK
+4	strategy4_ymakkena	ERROR	<class 'TypeError'>	string indices must be integers
+4	strategy4_ymak	ERROR	TIMEOUT (> 6 minutes on one board)
+5	strategy5_amadhugiri	OK
+5	server5_arao	OK
+5	strategy5_bstephan	OK
+5	strategy5_cbaek	OK
+5	strategy5_cjiang	OK
+5	strategy5_dtbloy	OK
+5	strategy5_ezsun	OK
+5	strategy5_schoi2	OK
+5	strategy5_schoi2	OK
+5	strategy5_hkhang	OK
+5	strategy5_jduvall	OK
+5	strategy5_jyu	OK
+5	strategy5_jzhou	OK
+5	strategy5_nkoppara	OK
+5	strategy5_padusuma	ERROR	<class 'TypeError'>	string indices must be integers
+5	strategy5_ermoar	OK
+5	strategy5_1411670	OK
+5	strategy5_rmadhugiri	OK
+5	strategy5_rlanka	OK
+5	strategy5_rdhumne	OK
+5	strategy5_sbachu	OK
+5	strategy5_skrishnan	OK
+5	strategy5_wbsun	OK
+7	strategy7_amishra	OK
+7	strategy7_aveizi	OK
+7	strategy7_asaravanan	OK
+7	strategy7_deyutin	OK
+7	strategy7_eling	OK
+7	strategy7_equan	OK
+7	strategy7_2017ebachman	OK
+7	strategy7_ezlin	OK
+7	strategy7_jjliu	OK
+7	strategy7_jwang2	OK
+7	strategy7_jlee	OK
+7	strategy7_jcai	OK
+7	strategy7_kgamelung	OK
+7	strategy7_kli	ERROR	<class 'TypeError'>	string indices must be integers
+7	strategy7_lpdesruelle	OK
+7	strategy7_igomez	OK
+7	strategy7_ndar	ERROR	<class 'TypeError'>	sequence item 8: expected str instance, NoneType found
+7	strategy7_2018ndass	OK
+7	strategy7_sbevara	OK
+7	strategy7_spbove	OK
+7	strategy7_sjaiswal	OK
+7	strategy7_vsubrama	OK
+7	strategy7_vriyengar	OK
+99	strategy4ajoshi	OK
+99	strategyx_ywang7	OK

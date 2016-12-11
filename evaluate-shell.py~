@@ -1,0 +1,137 @@
+import pickle
+import strategy as myAI
+import core
+import random
+import importlib
+import os
+import fnmatch
+import re
+import time
+import logging
+logging.basicConfig(filename='run.log',level=logging.DEBUG)
+logging.debug("START: " + time.asctime()+"-"*20)
+#############################################################
+# mini-shell.py
+# a simple tic-tac-toe client
+# plays 2 strategies against each other and keeps score
+# imports strategies from "strategies.py" as ai
+# rest of functionality is stored in core.py
+#
+# Patrick White: December 2016
+############################################################
+
+SILENT = True
+
+# see core.py for constants: MAX, MIN, TIE
+
+def print_boards(boards, prepend = ""):
+
+    output = ""
+    for row in range(3):
+        output += prepend
+        for board in boards:
+            output += board[3*row:3*row+3]
+            output += " "
+        output += "\n"
+    return(output)
+
+def play(strategy_X, strategy_O, first=core.MAX, silent=True):
+    """
+    Plays strategy_X vs. strategy_O, beginning with first
+    in one game. Returns X, O or TIE as a result (string)
+
+    The functions make_move, next_player and terminal_test are
+    implemented elsewhere (e.g. in core.py). The current implementation
+    uses a 9-char string as the state, but that is not exposed at this level.
+    """
+    board = core.start_state
+    boards = [board]
+    player = first
+    current_strategy = {core.MAX: strategy_X, core.MIN: strategy_O}
+    while player is not None:
+        move = current_strategy[player](board, player)
+        board = core.make_move(board, player, move)
+        boards.append(board)
+        player = core.next_player(board, player)
+        if not silent: core.print_board(board)
+    return core.terminal_test(board), print_boards(boards,"\t")
+
+
+def main(strat_lib, rounds, name):
+    """
+    Plays ROUNDS tic-tac-toe games and keeps a count of
+    wins/ties. Uses strategies defined as global constants above.
+    Selects a random starting player
+    """
+
+    ai = importlib.import_module("students."+strat_lib)
+
+    X_STRATEGY = ai.minimax_strategy(9)
+    O_STRATEGY = myAI.random_strategy
+
+    j = []
+    for i in range(rounds):
+        try:
+            tic = time.time()
+            game_result, output = play(X_STRATEGY, O_STRATEGY,
+                          first=random.choice([core.MAX, core.MIN]),
+                          silent=SILENT)
+            toc = time.time()
+            j.append(game_result)
+            logging.info(("%s %4.2f sec" % ( name, toc-tic) + "\n" + output[:-1]))
+
+            logging.info("\tWinner: %s\n" % game_result)
+        except core.IllegalMoveError as e:
+            logging.debug(str(e))
+            j.append("FORFEIT")
+    #print("\nResults\n" + "%4s %4s %4s" % ("X", "O", "-"))
+    #print("-" * 15)
+    #print("%4i %4i %4i" % (j.count(core.MAX), j.count(core.MIN), j.count(core.TIE)))
+    (w,l,t) = (j.count(core.MAX), j.count(core.MIN), j.count(core.TIE))
+    return [(w,l,t),(w+t)/(w+l+t)]
+
+def error_check():
+    outfile = open("errors.txt", "w")
+    prefix = "students"
+    index = open("students-index.txt","r")
+    for line in index.readlines():
+        (block, name, file, newfile) = line.strip().split(";")
+        strat_lib = newfile.replace(".py","")
+        try:
+            value = main(strat_lib, 1)
+            print(block, strat_lib, "OK")
+            print("%s\t%s\t%s" % (block, strat_lib, "OK"), file=outfile)
+
+        except BaseException as e:
+            print ("%s\t%s\t%s\t%s\t%s" % (block, strat_lib, "ERROR", e.__class__, e))
+            print("%s\t%s\t%s\t%s\t%s" % (block, strat_lib, "ERROR", e.__class__, e), file=outfile)
+
+    index.close()
+    outfile.close()
+
+def get_results():
+    outfile = open("results"+str(int(time.time()))+".txt", "w")
+    prefix = "students"
+    index = open("students-index.txt","r")
+    for line in index.readlines():
+        (block, name, file, newfile) = line.strip().split(";")
+        strat_lib = newfile.replace(".py","")
+        try:
+            tic = time.time()
+            [(w,l,t),score] = main(strat_lib, 5, name)
+            toc = time.time()
+            print("%s\t%s\t%i\t%i\t%i\t%i\t%4.2f" % (block, strat_lib, w, l, t, int(100*score), toc-tic))
+            print("%s\t%s\t%i\t%i\t%i\t%i\t%4.2f" % (block, strat_lib, w, l, t, int(100*score), toc-tic),
+                  file=outfile)
+            logging.info("%s\t%s\t%i\t%i\t%i\t%i\t%4.2f" % (block, strat_lib, w, l, t, int(100*score), tic-toc))
+
+        except BaseException as e:
+            print ("%s\t%s\t%s\t%s\t%s" % (block, strat_lib, "ERROR", e.__class__, e))
+            logging.info ("%s\t%s\t%s\t%s\t%s" % (block, strat_lib, "ERROR", e.__class__, e))
+            print("%s\t%s\t%s\t%s\t%s" % (block, strat_lib, "ERROR", e.__class__, e), file=outfile)
+
+    index.close()
+    outfile.close()
+
+if __name__ == "__main__":
+    error_check()
